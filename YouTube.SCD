@@ -14,3 +14,16 @@ Eli Fieldsteel
 13:28
 SuperCollider Tutorial: 2. Making Sound 
 
+
+Some basic code because GitHub is not showing this as SuperCollider:
+// Define a custom synth
+(
+SynthDef("beep", {
+    arg freq = 440;
+    var sound = SinOsc.ar(freq) * 0.2;
+    Out.ar(0, sound);
+}).add;
+)
+
+// Play it
+x = Synth("beep", [\freq, 660]);
